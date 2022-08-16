@@ -1,0 +1,33 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: roboto;
+}
+.main_div{
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 1px;
+}
+
+.card_layout {
+  border-radius: 8px;
+  width:345px;
+  margin:  auto;
+  margin-bottom:30px;
+}
+
+.pagination{
+  width:350px;
+  margin:  auto;
+  margin-top: 50px;
+  margin-bottom:25px;
+}
+.character_name{
+  width: 320px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
