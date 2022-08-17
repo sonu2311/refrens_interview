@@ -43,7 +43,7 @@ function ActionAreaCard({characterDetails}) {
       setLocationinfo(backend_output)
       
     })
-    if (characterDetails.episode.length> 0){
+    if (characterDetails.episode.length > 0){
       const episode_api = "https://rickandmortyapi.com/api/episode/[" + characterDetails.episode.map(x => x.split("/").pop()).join(",")+"]"
 
       fetch(episode_api)
@@ -110,7 +110,6 @@ function ActionAreaCard({characterDetails}) {
                       <div className='subdetails'>{locationinfo.dimension}</div>
                       <div className='title_in_pop'> Residents Amount Of Location </div>
                       <div className='subdetails'>{locationinfo.residents.length}</div>
-                      
                       <div className='episode_name_title'> Episode Names</div>
                       <hr></hr> 
                       <div className='episode_names_list'>
