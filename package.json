@@ -19,6 +19,7 @@
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:5504",
+  "homepage": "https://sonu2311.github.io/refrens_interview/",
   "eslintConfig": {
     "extends": [
       "react-app",

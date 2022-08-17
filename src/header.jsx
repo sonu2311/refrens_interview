@@ -16,7 +16,7 @@ export function DenseAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit" component="div">
-            REFRENS
+            Rick & Morty Characters
           </Typography>
         </Toolbar>
       </AppBar>

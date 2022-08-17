@@ -31,6 +31,7 @@ function ActionAreaCard({characterDetails}) {
 
   const handleOpen = () => {
     setOpen(true);
+
     fetch(characterDetails.origin.url)
     .then(x => x.json())
     .then(function(backend_output){
@@ -100,17 +101,17 @@ function ActionAreaCard({characterDetails}) {
                 aria-describedby="parent-modal-description"
               >
                 <div>
-                  <Box sx={{ ...style, width: 500, borderRadius:"5px"}}>
+                  <Box sx={{ ...style, width: 350, borderRadius:"5px"}}>
                     <div className='popup'  >
-                      <div className='title_in_pop'> Origin Dimension</div>
+                      <div className='title_in_pop'>Origin Dimension</div>
                       <div className='subdetails'>{origininfo.dimension}</div>
-                      <div className='title_in_pop' > Residents Amount Of Origin </div>
+                      <div className='title_in_pop' >#Residents at Origin</div>
                       <div className='subdetails'>{origininfo.residents.length}</div>
                       <div className='title_in_pop'>Location Dimension</div>
                       <div className='subdetails'>{locationinfo.dimension}</div>
-                      <div className='title_in_pop'> Residents Amount Of Location </div>
+                      <div className='title_in_pop'>#Residents at Location </div>
                       <div className='subdetails'>{locationinfo.residents.length}</div>
-                      <div className='episode_name_title'> Episode Names</div>
+                      <div className='episode_name_title'>Episode Names</div>
                       <hr></hr> 
                       <div className='episode_names_list'>
                         {episodeList.map((x, index)=>(
