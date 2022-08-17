@@ -10,7 +10,6 @@ import Pagination from "@mui/material/Pagination";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 
-
 const style = {
   position: "absolute",
   top: "50%",
@@ -18,7 +17,6 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  // border: "2px solid #eee",
   boxShadow: 24,
   pt: 1,
   px: 2,
@@ -64,68 +62,68 @@ function ActionAreaCard({characterDetails}) {
   return (
     <div className="col-lg-4 col-sm-6 col-xs-12" style={{textAlign:"center"}}>
       <div className='card_layout'>
-        <Card sx={{ maxWidth: 345 }} style={{borderRadius:"8px" }}>
-            <CardMedia
-              component="img"
-              image={characterDetails.image}
-              alt="green iguana"
-            />
-            <CardContent style={{textAlign:"left",}}>
-              <Typography gutterBottom variant="h6" component="div" className='character_name'>
-                {characterDetails.name}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                <div className='content_dives'>
-                  <span class="material-icons pointer" style={{color : (characterDetails.status == "Dead" ? "rgb(214, 61, 46)" :"rgb(85, 204, 68)" )}}>
-                  fiber_manual_record
-                  </span>
-                  <span className='title_in_card'> {characterDetails.status} - </span>
-                  <span className='title_in_card' >
-                    {characterDetails.species} ({characterDetails.gender})
-                  </span>
-                </div>
-                <div className='content_dives'>
-                  <span className='title_in_card' >Origin : </span>
-                  <span  className='color_change' style={{}} >{characterDetails.origin.name}</span>
-                </div>
-                <div className='content_dives'>
-                  <span className='title_in_card'>Location : </span>
-                  <span className='color_change'  style={{}} >{characterDetails.location.name}</span>
-                </div>
+        <Card className='card_radius' sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            image={characterDetails.image}
+            alt="green iguana"
+          />
+          <CardContent style={{textAlign:"left",}}>
+            <Typography gutterBottom variant="h6" component="div" className='character_name'>
+              {characterDetails.name}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              <div className='content_dives'>
+                <span class="material-icons pointer" style={{color : (characterDetails.status == "Dead" ? "rgb(214, 61, 46)" :"rgb(85, 204, 68)" )}}>
+                fiber_manual_record
+                </span>
+                <span className='title_in_card'> {characterDetails.status} - </span>
+                <span className='title_in_card' >
+                  {characterDetails.species} ({characterDetails.gender})
+                </span>
+              </div>
+              <div className='content_dives'>
+                <span className='title_in_card' >Origin : </span>
+                <span  className='color_change' style={{}} >{characterDetails.origin.name}</span>
+              </div>
+              <div className='content_dives'>
+                <span className='title_in_card'>Location : </span>
+                <span className='color_change'  style={{}} >{characterDetails.location.name}</span>
+              </div>
 
-                <div className='moredetails' onClick={handleOpen}>See more... </div>
+              <div className='moredetails' onClick={handleOpen}>See more... </div>
 
-                <Modal
-                  open={open}
-                  onClose={handleClose}
-                  aria-labelledby="parent-modal-title"
-                  aria-describedby="parent-modal-description"
-                >
-                  <div>
-                    <Box sx={{ ...style, width: 500, borderRadius:"5px"}}>
-                      <div className='popup'  >
-                        <div className='title_in_pop'> Origin Dimension</div>
-                        <div className='subdetails'>{origininfo.dimension}</div>
-                        <div className='title_in_pop' > Residents Amount Of Origin </div>
-                        <div className='subdetails'>{origininfo.residents.length}</div>
-                        <div className='title_in_pop'>Location Dimension</div>
-                        <div className='subdetails'>{locationinfo.dimension}</div>
-                        <div className='title_in_pop'> Residents Amount Of Location </div>
-                        <div className='subdetails'>{locationinfo.residents.length}</div>
-                        
-                        <div className='episode_name_title'> Episode Names</div>
-                        <hr></hr> 
-                        <div className='episode_names_list'>
-                          {episodeList.map((x, index)=>(
-                            <div className='all_episode_name' >{index+1}. {x.name}</div>
-                          ))}
-                        </div> 
-                      </div>
-                    </Box>
-                  </div>
-                </Modal>                
-              </Typography>
-            </CardContent>
+              <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="parent-modal-title"
+                aria-describedby="parent-modal-description"
+              >
+                <div>
+                  <Box sx={{ ...style, width: 500, borderRadius:"5px"}}>
+                    <div className='popup'  >
+                      <div className='title_in_pop'> Origin Dimension</div>
+                      <div className='subdetails'>{origininfo.dimension}</div>
+                      <div className='title_in_pop' > Residents Amount Of Origin </div>
+                      <div className='subdetails'>{origininfo.residents.length}</div>
+                      <div className='title_in_pop'>Location Dimension</div>
+                      <div className='subdetails'>{locationinfo.dimension}</div>
+                      <div className='title_in_pop'> Residents Amount Of Location </div>
+                      <div className='subdetails'>{locationinfo.residents.length}</div>
+                      
+                      <div className='episode_name_title'> Episode Names</div>
+                      <hr></hr> 
+                      <div className='episode_names_list'>
+                        {episodeList.map((x, index)=>(
+                          <div className='all_episode_name' >{index+1}. {x.name}</div>
+                        ))}
+                      </div> 
+                    </div>
+                  </Box>
+                </div>
+              </Modal>                
+            </Typography>
+          </CardContent>
         </Card>
       </div>
     </div>
